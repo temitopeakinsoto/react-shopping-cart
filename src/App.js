@@ -27,7 +27,7 @@ function App() {
 				exact
 				path="/"
 				render={() => (
-					<ProductContext.Provider>
+					<ProductContext.Provider value={{ products, addItem }}>
 						<Products products={products} addItem={addItem}	/>
 					</ProductContext.Provider>
 					
