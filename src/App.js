@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import data from './data';
 
+//Contexts
+import ProductContext from './contexts/productContext';
+
 // Components
 import Navigation from './components/Navigation';
 import Products from './components/Products';
@@ -24,10 +27,10 @@ function App() {
 				exact
 				path="/"
 				render={() => (
-					<Products
-						products={products}
-						addItem={addItem}
-					/>
+					<ProductContext.Provider>
+						<Products products={products} addItem={addItem}	/>
+					</ProductContext.Provider>
+					
 				)}
 			/>
 
